@@ -1,0 +1,299 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Container styling */
+.box {
+    margin-top: 80px;
+    padding: 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Video element styling */
+.video {
+    width: 680px;
+    height: 380px;
+    border: 3px solid #007bff;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Timer display */
+.timer {
+    font-size: 28px;
+    margin: 20px 0;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Introduction text container */
+.intro_text {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.intro_text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.intro_text ul {
+    padding-left: 20px;
+}
+
+.intro_text li {
+    margin: 10px 0;
+    color: #555;
+}
+
+/* Button styling */
+.button {
+    padding: 12px 28px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.button:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Recording section */
+.recordings {
+    display: none;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Title styling */
+.self {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #333;
+    text-align: center;
+}
+
+/* Emotion display */
+.emotion-display {
+    margin: 15px 0;
+    font-size: 18px;
+    color: #666;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Controls section */
+.controls {
+    margin: 25px 0;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Status message */
+.status {
+    margin: 10px 0;
+    font-style: italic;
+    color: #666;
+    font-size: 14px;
+}
+
+/* Video container */
+.video-container {
+    margin: 20px auto;
+    max-width: 700px;
+}
+
+/* Navbar customization */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .video {
+        width: 100%;
+        height: auto;
+    }
+
+    .intro_text {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .timer {
+        font-size: 24px;
+    }
+
+    .self {
+        font-size: 26px;
+    }
+    /* Base styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fbff;
+    color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* Container styling */
+.box {
+    margin-top: 100px;
+    padding: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Video element styling */
+.video {
+    width: 100%;
+    height: 380px;
+    border: 3px solid #007bff;
+    border-radius: 8px;
+    background-color: #e6f2ff;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Timer display */
+.timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    text-align: center;
+    padding: 10px;
+    margin: 20px 0;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Button styling */
+.button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #a71d2a;
+}
+
+.button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Introduction text container */
+.intro_text {
+    margin: 20px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.intro_text h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.intro_text p, .intro_text ul {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.intro_text ul {
+    padding-left: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {}
+    .video {
+        height: auto;
+    }
+
+    .timer {
+        font-size: 20px;
+    }
+
+    .intro_text {
+        padding: 15px;
+    }
+
+
+}
