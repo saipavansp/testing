@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interview Assessment Platform</title>
     
-    
-    <!-- Libraries -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -163,6 +161,48 @@
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
+
+        .mode-selection {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .mode-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .mode-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .mode-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .template-selection {
+            display: none;
+            padding: 20px;
+        }
+        
+        .template-card {
+            background: var(--light-blue);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        .template-card:hover {
+            background: #d0e3fa;
+        }
     </style>
 </head>
 <body>
@@ -175,8 +215,57 @@
     </nav>
 
     <div class="box">
+        <!-- Mode Selection Screen -->
+        <div class="mode-selection" id="modeSelection">
+            <h2 class="self">Choose Your Introduction Type</h2>
+            <div class="mode-cards">
+                <div class="mode-card" onclick="selectMode('static')">
+                    <h3>Static Introduction</h3>
+                    <p>Standard self-introduction format suitable for general purposes</p>
+                    <ul class="list-unstyled">
+                        <li>✓ Personal Background</li>
+                        <li>✓ Educational History</li>
+                        <li>✓ Work Experience</li>
+                        <li>✓ Skills & Interests</li>
+                    </ul>
+                    <button class="button">Select Static Mode</button>
+                </div>
+                <div class="mode-card" onclick="selectMode('dynamic')">
+                    <h3>Dynamic Introduction</h3>
+                    <p>Industry-specific format with customized templates</p>
+                    <ul class="list-unstyled">
+                        <li>✓ Role-specific Format</li>
+                        <li>✓ Industry Guidelines</li>
+                        <li>✓ Targeted Evaluation</li>
+                        <li>✓ Specialized Feedback</li>
+                    </ul>
+                    <button class="button">Select Dynamic Mode</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Template Selection for Dynamic Mode -->
+        <div class="template-selection" id="templateSelection">
+            <h3 class="self">Select Your Industry Template</h3>
+            <div class="template-cards">
+                <div class="template-card" onclick="selectTemplate('software')">
+                    <h4>Software Engineering</h4>
+                    <p>Focus on technical skills, projects, and development experience</p>
+                </div>
+                <div class="template-card" onclick="selectTemplate('banking')">
+                    <h4>Banking & Finance</h4>
+                    <p>Emphasis on financial expertise, regulations, and client management</p>
+                </div>
+                <div class="template-card" onclick="selectTemplate('healthcare')">
+                    <h4>Healthcare</h4>
+                    <p>Highlight medical expertise, patient care, and certifications</p>
+                </div>
+            </div>
+            <button class="button" onclick="backToModes()">Back to Modes</button>
+        </div>
+
         <!-- Initial Screen -->
-        <div class="asses1" id="asses1">
+        <div class="asses1" id="asses1" style="display: none;">
             <div class="intro_text">
                 <h3>Self Introduction Assessment</h3>
                 <p>Please provide a 2-minute self-introduction covering:</p>

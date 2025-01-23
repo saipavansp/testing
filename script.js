@@ -1,4 +1,6 @@
 // Global state variables
+let currentMode = null;
+let selectedTemplate = null;
 let videoStream;
 let audioStream;
 let mediaRecorder;
@@ -17,7 +19,37 @@ let speechData = {
     transcripts: []
 };
 
-// DOM Elements
+const templates = {
+    software: {
+        title: "Software Engineering Introduction",
+        points: [
+            "Technical skills and programming languages",
+            "Key projects and contributions",
+            "System design experience",
+            "Development methodologies"
+        ]
+    },
+    banking: {
+        title: "Banking Professional Introduction",
+        points: [
+            "Financial expertise and specialization",
+            "Regulatory knowledge",
+            "Client portfolio management",
+            "Risk assessment experience"
+        ]
+    },
+    healthcare: {
+        title: "Healthcare Professional Introduction",
+        points: [
+            "Medical specialization",
+            "Patient care experience",
+            "Clinical skills",
+            "Certifications and training"
+        ]
+    }
+};
+
+
 const videoElement = document.getElementById('video');
 const timerElement = document.getElementById('timer');
 const emotionElement = document.getElementById('emotion');
@@ -35,6 +67,42 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeFaceMesh();
     setupSpeechRecognition();
 });
+
+function selectMode(mode) {
+    currentMode = mode;
+    if (mode === 'static') {
+        document.getElementById('modeSelection').style.display = 'none';
+        document.getElementById('asses1').style.display = 'block';
+    } else {
+        document.getElementById('modeSelection').style.display = 'none';
+        document.getElementById('templateSelection').style.display = 'block';
+    }
+}
+
+function selectTemplate(template) {
+    selectedTemplate = template;
+    const templateData = templates[template];
+    
+    document.getElementById('templateSelection').style.display = 'none';
+    
+    // Update assessment guidelines based on template
+    const intro_text = document.querySelector('.intro_text');
+    intro_text.innerHTML = `
+        <h3>${templateData.title}</h3>
+        <p>Please provide a 2-minute self-introduction covering:</p>
+        <ul>
+            ${templateData.points.map(point => `<li>${point}</li>`).join('')}
+        </ul>
+    `;
+    document.getElementById('asses1').style.display = 'block';
+}
+
+function backToModes() {
+    document.getElementById('templateSelection').style.display = 'none';
+    document.getElementById('modeSelection').style.display = 'block';
+    currentMode = null;
+    selectedTemplate = null;
+}
 
 // Initialize FaceMesh
 function initializeFaceMesh() {
